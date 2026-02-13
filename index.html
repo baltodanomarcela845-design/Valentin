@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>¿Quieres ser mi San Valentín?</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #7b001c, #c2185b);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.card {
+  background: #1e1e1e;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+  width: 300px;
+}
+
+.card img {
+  width: 120px;
+  margin-bottom: 15px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+h1 {
+  font-size: 22px;
+  color: #ffb6c1;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+#yes {
+  background: #ff4d6d;
+  color: white;
+}
+
+#no {
+  background: #555;
+  color: white;
+  position: relative;
+}
+
+#message {
+  margin-top: 20px;
+  color: #ffb6c1;
+  font-size: 16px;
+  display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <!-- Puedes cambiar el osito por otra imagen si quieres -->
+  <img src="https://media.tenor.com/6W8F7xg2hOEAAAAi/bear-love.gif" alt="Osito">
+
+  <h1>¿Quieres ser mi San Valentín? 💕</h1>
+
+  <div class="buttons">
+    <button id="yes">Sí 💖</button>
+    <button id="no">No 💔</button>
+  </div>
+
+  <div id="message">
+    💞 Sabía que dirías que sí 💞  
+    <br>Te amo 🧸❤️
+  </div>
+</div>
+
+<script>
+const noBtn = document.getElementById("no");
+noBtn.addEventListener("mouseover", () => {
+  noBtn.style.left = Math.random() * 120 - 60 + "px";
+  noBtn.style.top = Math.random() * 120 - 60 + "px";
+});
+
+document.getElementById("yes").addEventListener("click", () => {
+  document.getElementById("message").style.display = "block";
+});
+</script>
+
+</body>
+</html>
